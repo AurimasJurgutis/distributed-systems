@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "com.dsproject";
+option java_multiple_files = true;
+option java_outer_classname = "CSVDisplayGUIImpl";
+
+service displayCSV {
+
+	rpc display(displayRequest) returns (displayResponse) {}
+	
+	rpc terminateDisplay(tdRequest) returns (tdResponse) {}
+
+}
+
+message displayRequest {
+	string display = 1;
+}
+
+message displayResponse {
+	string drResponse = 1;
+	int32 drResponseCode = 2;
+}
+
+message tdRequest {
+	string terminate = 1;
+}
+
+message tdResponse {
+	string terResponse = 1;
+	int32 trResponseCode = 2;
+}

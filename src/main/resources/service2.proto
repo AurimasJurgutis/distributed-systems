@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "com.dsproject";
+option java_multiple_files = true;
+option java_outer_classname = "PollutantGUIImpl";
+
+service PollutantGUI {
+
+	rpc displayGUI (displayGUIRequest) returns (displayGUIResponse) {}
+	
+	rpc terminateGUI (terminateGUIRequest) returns (terminateGUIResponse) {}
+
+}
+
+message displayGUIRequest {
+	string dgmessage = 1;
+}
+
+message displayGUIResponse {
+	string dgresponse = 1;
+	int32 dgresponsecode = 2;
+}
+
+message terminateGUIRequest {
+	string tgmessage = 1;
+}
+
+message terminateGUIResponse {
+	string tgresponse = 1;
+	int32 tgresponsecode = 2;
+}
